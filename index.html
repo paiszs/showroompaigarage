@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAI GARAGE - Premium Auto Showroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+    :root {
+        --primary-pink: #ff0095;
+        --dark-pink: #d8007e;
+        --light-pink: #ff7ecb;
+        --black: #000000;
+        --dark-gray: #1a1a1a;
+        --white: #ffffff;
+    }
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--black);
+        background-color: var(--white);
+    }
+    
+    h1, h2, h3, h4, h5, .display-1, .display-3 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--black);
+    }
+    
+    .navbar {
+        background-color: var(--black) !important;
+        font-weight: 600;
+    }
+    
+    .navbar-brand, .nav-link {
+        color: var(--white) !important;
+    }
+    
+    .nav-link:hover {
+        color: var(--light-pink) !important;
+    }
+    
+    .banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/tips-showroom-1.jpg") no-repeat center center;
+        background-size: cover;
+        padding-top: 15%;
+        padding-bottom: 15%;
+        color: var(--white);
+    }
+    
+    .banner .display-1 {
+        color: var(--primary-pink);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+    }
+    
+    .banner .display-6 {
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+    
+    .btn-dark {
+        background-color: var(--black);
+        border-color: var(--black);
+        padding: 10px 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .btn-dark:hover {
+        background-color: var(--primary-pink);
+        border-color: var(--primary-pink);
+    }
+    
+    .lingkaran {
+        display: inline-block;
+        border-radius: 50%;
+        width: 150px;
+        margin: auto;
+        height: 150px;
+        color: var(--white);
+        background-color: var(--primary-pink);
+        transition: all 0.3s;
+    }
+    
+    .lingkaran:hover {
+        transform: scale(1.1);
+        background-color: var(--dark-pink);
+    }
+    
+    .lingkaran i {
+        position: relative;
+        top: 30px;
+    }
+    
+    .layanan {
+        background-color: var(--white);
+        padding: 100px 0;
+    }
+    
+    .layanan h3 {
+        margin-top: 20px;
+        color: var(--primary-pink);
+    }
+    
+    .crop-img {
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    
+    .card:hover .crop-img {
+        transform: scale(1.05);
+    }
+    
+    .card {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        overflow: hidden;
+    }
+    
+    .card:hover {
+        box-shadow: 0 10px 25px rgba(255, 0, 150, 0.2);
+    }
+    
+    .card-title {
+        color: var(--primary-pink);
+        font-weight: 600;
+    }
+    
+    .tim img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+        border: 10px solid var(--primary-pink);
+        transition: all 0.3s;
+    }
+    
+    .tim img:hover {
+        transform: scale(1.05);
+        border-color: var(--dark-pink);
+    }
+    
+    a.social {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        color: var(--white);
+        border-radius: 50%;
+        background-color: var(--primary-pink);
+        line-height: 40px;
+        margin: 0 5px;
+        transition: all 0.3s;
+    }
+    
+    a.social:hover {
+        background-color: var(--dark-pink);
+        transform: translateY(-5px);
+    }
+    
+    .client img {
+        height: auto;
+        max-height: 50px;
+        filter: grayscale(100%);
+        transition: all 0.3s;
+    }
+    
+    .client img:hover {
+        filter: grayscale(0%);
+    }
+    
+    .kontak {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(images/RPM-Specialist-Cars-Porsche-Showroom-12-1024x427.jpg) no-repeat center center;
+        background-size: cover;
+        padding: 100px 0;
+        color: var(--white);
+    }
+    
+    .kontak h2 {
+        color: var(--primary-pink);
+    }
+    
+    .kontak .form-control {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: none;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .kontak .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(255, 0, 150, 0.25);
+        border-color: var(--primary-pink);
+    }
+    
+    .kontak textarea.form-control {
+        height: 150px;
+    }
+    
+    footer {
+        background-color: var(--black);
+        color: var(--white);
+        padding: 30px 0;
+        font-weight: 600;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade {
+        animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">PAI GARAGE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portofolio">Portofolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#staff">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner -->
+    <div class="container-fluid banner">
+        <div class="container text-center animate-fade">
+            <h4 class="display-6">WELCOME TO</h4>
+            <h3 class="display-1">PAI GARAGE</h3>
+            <p class="lead mb-4">Premium Auto Showroom & Services</p>
+            <a href="#layanan">
+                <button type="button" class="btn btn-dark">Explore Our Services</button>
+            </a>
+        </div>
+    </div>
+    <!-- Layanan -->
+    <div class="container-fluid layanan pt-5 pb-5">
+        <div class="container text-center">
+            <h2 class="display-3 mb-5" id="layanan">Our Services</h2>
+            <p class="mb-5">PAI GARAGE menyediakan jasa jual beli kendaraan roda 2 maupun roda 4 dengan kualitas premium.</p>
+            <div class="row pt-4">
+                <div class="col-md-4 animate-fade delay-1">
+                    <span class="lingkaran"><i class="fa-solid fa-handshake-simple fa-5x"></i></span>
+                    <h3 class="mt-3">PENJUALAN MOBIL</h3>
+                    <p>Kami berfokus dibidang jual beli mobil bekas berkualitas tinggi</p>
+                </div>
+
+                <div class="col-md-4 animate-fade delay-2">
+                    <span class="lingkaran"><i class="fa-solid fa-screwdriver-wrench fa-5x"></i></span>
+                    <h3 class="mt-3">SPAREPART</h3>
+                    <p>Menyediakan sparepart original dengan kualitas terbaik</p>
+                </div>
+
+                <div class="col-md-4 animate-fade delay-3">
+                    <span class="lingkaran"><i class="fa-solid fa-warehouse fa-5x"></i></span>
+                    <h3 class="mt-3">SERVIS MOBIL</h3>
+                    <p>Kami menerima servis ringan dan pemasangan sparepart mobil</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portofolio -->
+    <div class="container-fluid pt-5 pb-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-3 mb-5" id="portofolio">Our Journey</h2>
+            <p class="mb-5">Brand yang didirikan dari passion sang owner terhadap dunia otomotif.</p>
+            <div class="row pt-4 gx-4 gy-4">
+                <div class="col-md-4 animate-fade">
+                    <div class="card h-100">
+                        <img src="images/5dd26647a0ee5.jpg" class="card-img-top crop-img">
+                        <div class="card-body">
+                            <h5 class="card-title">2 Tahun Lalu</h5>
+                            <p class="card-text">Berawal dari menjual mobil pribadi, dan disitu saya mendapatkan ide dan peluang di dalam jual beli mobil.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate-fade delay-1">
+                    <div class="card h-100">
+                        <img src="images/download.jpg" class="card-img-top crop-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Mulai Mendapatkan Customer</h5>
+                            <p class="card-text">Seiring berjalannya waktu, customer semakin banyak karena keadaan pasar yang semakin mendesak.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate-fade delay-2">
+                    <div class="card h-100">
+                        <img src="images/1713784874.webp" class="card-img-top crop-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Promosi Itu Penting</h5>
+                            <p class="card-text">Strategi marketing yang tepat sangat penting untuk menarik penjual dan pembeli ke showroom kami.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate-fade">
+                    <div class="card h-100">
+                        <img src="images/1607327105019852-0.jpg" class="card-img-top crop-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Kepuasan Pelanggan</h5>
+                            <p class="card-text">Kepuasan pelanggan adalah prioritas utama kami dengan memberikan servis dan pelayanan terbaik.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate-fade delay-1">
+                    <div class="card h-100">
+                        <img src="images/antarafoto-pameran-otomotif-giias-2023-di-bandung-221123-agr-2_ratio-16x9.jpg" class="card-img-top crop-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Mengikuti Trend Pasar</h5>
+                            <p class="card-text">Kami selalu update dengan perkembangan terbaru di dunia otomotif untuk memenuhi kebutuhan pelanggan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 animate-fade delay-2">
+                    <div class="card h-100">
+                        <img src="images/Fitra-1416988852.webp" class="card-img-top crop-img">
+                        <div class="card-body">
+                            <h5 class="card-title">Memahami Kebutuhan Konsumen</h5>
+                            <p class="card-text">Kami berhasil memahami dan memenuhi kebutuhan konsumen berkat passion kami di dunia otomotif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tentang -->
+     <div class="container-fluid pt-5 pb-5">
+        <div class="container">
+            <h2 class="display-3 text-center mb-5" id="tentang">TENTANG KAMI</h2>
+            <p class="text-center mb-5">Perjalanan Showroom Kami Menjadi yang Terbaik</p>
+            <div class="clearfix pt-5">
+                <img src="images/arief-muhammad-foto-instagramariefmuhammad-fmbkn-nyae.jpg" class="col-md-6 float-md-end mb-3 crop-img img-fluid shadow-lg" width="500">
+                <p class="lead">Seperti keterangan pada foto di atas, bisnis ini tidak berjalan dengan mulus. Banyak hambatan yang kami lalui bersama.</p>
+                <p>Mulai dari ketipu, unit dibawa kabur, kehilangan karyawan, kemalingan suku cadang, dan masih banyak lagi. Namun setiap tantangan membuat kami lebih kuat dan berpengalaman.</p>
+                <p>Tapi kami belajar dari kesalahan. Kami terus mengembangkan bisnis ini sampai mempunyai 3 layanan utama untuk memenuhi kebutuhan customer.</p>
+                <p>Visi kami adalah menciptakan tempat yang disukai para pecinta otomotif, khususnya pecinta roda 4. Karena kami yakin, passion dan dedikasi akan membuat tempat ini bertahan sampai kapanpun.</p>
+                <p>Dengan kombinasi antara pengetahuan teknis dan pelayanan prima, kami berkomitmen untuk memberikan pengalaman terbaik dalam setiap transaksi.</p>
+            </div>
+        </div>
+     </div>
+     <!-- Tim -->
+      <div class="container-fluid pt-5 pb-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-3 mb-5" id="staff">Tim Kami</h2>
+            <p class="mb-5">Tim profesional yang siap melayani kebutuhan otomotif Anda dengan sepenuh hati.</p>
+            <div class="row pt-4 gx-4 gy-4">
+                <div class="col-md-4 text-center tim animate-fade">
+                    <img src="images/Untitled3-1-2232086351.webp" class="rounded-circle mb-3">
+                    <h4>FITRA ERI</h4>
+                    <p class="text-muted">MARKETING</p>
+                    <p>
+                        <a href="" class="social"><i class="fab fa-twitter"></i></a>
+                        <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </p>
+                </div>
+                <div class="col-md-4 text-center tim animate-fade delay-1">
+                    <img src="images/WhatsApp Image 2025-04-16 at 10.41.19_ef004a70.jpg" class="rounded-circle mb-3">
+                    <h4>FAIZ DZAKY TORINO</h4>
+                    <p class="text-muted">CEO</p>
+                    <p>
+                        <a href="" class="social"><i class="fab fa-twitter"></i></a>
+                        <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </p>
+                </div>
+                <div class="col-md-4 text-center tim animate-fade delay-2">
+                    <img src="images/1102011_720.jpg" class="rounded-circle mb-3">
+                    <h4>ARIEF MUHAMMAD</h4>
+                    <p class="text-muted">Engineer</p>
+                    <p>
+                        <a href="" class="social"><i class="fab fa-twitter"></i></a>
+                        <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+       <!-- Kontak -->
+        <div class="container-fluid kontak">
+            <div class="container">
+                <h2 class="display-3 text-center mb-5" id="kontak">HUBUNGI KAMI</h2>
+                <p class="text-center mb-5">Silahkan isi form berikut untuk pertanyaan atau informasi lebih lanjut.</p>
+                <div class="row pb-3">
+                    <div class="col-md-6 animate-fade">
+                        <input class="form-control form-control-lg mb-3" type="text" placeholder="Nama">
+                        <input class="form-control form-control-lg mb-3" type="text" placeholder="Email">
+                        <input class="form-control form-control-lg" type="text" placeholder="No. Telepon">
+                    </div>
+                    <div class="col-md-6 animate-fade delay-1">
+                        <textarea class="form-control form-control-lg" rows="5" placeholder="Pesan Anda"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto text-center animate-fade delay-2">
+                    <button type="button" class="btn btn-dark btn-lg mt-4">Kirim Pesan</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-center pt-4 pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-md-start">
+                        <h5>PAI GARAGE</h5>
+                        <p>Premium Auto Showroom & Services</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-0">&copy; 2025 PAI GARAGE. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add animation class when scrolling
+        const animateElements = document.querySelectorAll('.animate-fade');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
